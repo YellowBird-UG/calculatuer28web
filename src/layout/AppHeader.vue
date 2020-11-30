@@ -2,13 +2,13 @@
     <header class="header-global">
         <base-nav class="navbar-main" transparent type="" effect="light" expand>
             <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-                <img src="img/brand/white.png" alt="logo">
+                <img src="img/brand/logonobg.png" alt="logo">
             </router-link>
 
             <div class="row" slot="content-header" slot-scope="{closeMenu}">
                 <div class="col-6 collapse-brand">
-                    <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/">
-                        <img src="img/brand/blue.png">
+                    <a href="#">
+                        <img src="img/brand/logobg.png">
                     </a>
                 </div>
                 <div class="col-6 collapse-close">
@@ -17,10 +17,13 @@
             </div>
 
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-                <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
+                <router-link to="/landing" class=""><span class="nav-link-inner--text">Examples</span></router-link>
+                <router-link to="/profile" class="nav-link-inner--text">About Us</router-link>
+                    <router-link to="/login" class="nav-link-inner--text">Contact Us</router-link>
+                <!--<base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
                         <i class="ni ni-ui-04 d-lg-none"></i>
-                        <span class="nav-link-inner--text">Components</span>
+                        <span class="nav-link-inner--text">Home</span>
                     </a>
                     <div class="dropdown-menu-inner">
                         <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
@@ -46,7 +49,7 @@
                             </div>
                         </a>
                     </div>
-                </base-dropdown>
+                </base-dropdown>-->
                 <base-dropdown tag="li" class="nav-item">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
                         <i class="ni ni-collection d-lg-none"></i>
@@ -87,15 +90,15 @@
                         <span class="nav-link-inner--text d-lg-none">Github</span>
                     </a>
                 </li>-->
-                <!--<li class="nav-item d-none d-lg-block ml-lg-4">
-                    <a href="https://www.creative-tim.com/product/vue-argon-design-system" target="_blank" rel="noopener"
+                <li class="nav-item d-none d-lg-block ml-lg-4">
+                    <a href="https://play.google.com/store/apps/details?id=com.thealphamerc.flutter_healthcare_app" target="_blank" rel="noopener"
                        class="btn btn-neutral btn-icon">
                 <span class="btn-inner--icon">
                   <i class="fa fa-cloud-download mr-2"></i>
                 </span>
-                        <span class="nav-link-inner--text">Download</span>
+                        <span class="nav-link-inner--text">Download App</span>
                     </a>
-                </li>-->
+                </li>
             </ul>
         </base-nav>
     </header>

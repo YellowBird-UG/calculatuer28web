@@ -1,0 +1,45 @@
+<template>
+
+  
+  <section id="app" class="section content has-text-centered">
+    
+<transition name="fade" mode="out-in">
+    <div class="content columns level is-centered
+" v-if="!calcReturned" key="calendar">
+
+      <div class="column is-one-third level has-text-centered ">
+        <p class="subtitle">Please select the first day of your last menstrual period:</p>
+        <vuejs-datepicker :inline="true" v-model="date">{{ date }}</vuejs-datepicker>
+      </div>
+
+      <div class="column is-one-third has-text-centered level">
+        <p>Usual number of days in your cycle:</p>
+        <div class="select is-primary">
+          <select name="days" v-model="cycleSelected">
+            <option :key="n" v-for="n in 45" v-if="n >= 20">{{ n }}</option>
+          </select>
+        </div>
+
+        <div class="level-item">
+          <button class="button is-large is-primary is-rounded " id="calculate-btn" @click="startCalc(); calculateFertileBegin(); calculateFertileEnds(); calculateDueDate();">Calculate</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content has-text-centered" v-else key="result">
+
+      <p class="subtitle">Here are the results based on the information you provided:</p>
+      <p>Your next most fertile period is <strong>{{ fertileFrom }}</strong> to <strong>{{ fertileUntil }}</strong>.</p>
+      <p>If you conceive within this timeframe, your estimated due date will be <strong>{{ dueDate }}</strong>.</p>
+      <div class="level-item">
+        <button class="button is-large is-primary is-rounded" id="resetCalc" @click="resetCalc">Calculate Again</button>
+      </div>
+
+    </div>
+</transition>
+    
+    <div class="notification is-full">*Average length will vary by woman. **A woman's best days to conceive can start at least one day prior and last at least one day after fertile date.
+    </div>
+
+  </section>
+</template>
